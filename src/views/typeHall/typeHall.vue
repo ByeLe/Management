@@ -10,21 +10,27 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 export default {
   data() {
     return {
-      typeList: []
+      // typeList: []
     }
   },
   activated() {
     this.getClassification()
   },
+  computed: {
+    ...mapState(['typeList'])
+  },
+
   methods: {
+    ...mapMutations(['changeTypeList']),
     async getClassification() {
       const { data: res } = await this.axios.get('/classification/select')
       console.log(res)
       if (res.status === 200) {
-        this.typeList = res.data
+        this.changeTypeList(res.data)
       }
     },
     confirmDelete(type) {

@@ -5,10 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    typeList: []
   },
   mutations: {
+    changeTypeList(state, data) {
+      state.typeList = data
+    }
   },
   actions: {
+
   },
   modules: {
   }
