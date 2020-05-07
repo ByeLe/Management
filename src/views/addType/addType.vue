@@ -33,7 +33,7 @@ export default {
     },
     deleteKey() {
       if (this.keyList.length > 1) {
-        this.keyList.splice(this.keyList.length - 1, 1)
+        this.keyList.splice(this.keyList.length - 1, 1) 
       }
     },
     async toSendKey() {
